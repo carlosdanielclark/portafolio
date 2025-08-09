@@ -1,0 +1,66 @@
+<!-- Heredar de 'base.html' -->
+{% extends 'base.html' %} {% block content %}
+<!-- Importar etiqueta -->
+{% load static %}
+
+    
+<!-- Hero Section -->
+<header class="bg-black text-center py-5">
+  <div class="container">
+    <!-- Imagen circular centrada -->
+    <img src="{% static 'portfolio/profile.jpg' %}" 
+         class="rounded-circle mx-auto d-block" 
+         alt="Profile Picture" 
+         style="width: 150px; height: 150px; object-fit: cover;"/>
+  
+    <!-- Texto perfil -->
+    <h1 class="mt-3"><strong>Carlos daniel Clarke Imbert</strong></h1>
+    <h3>Automation Engineer</h3>
+    <p class="mx-auto" style="max-width: 700px;">
+      I am Carlos Daniel Clarke Imbert, an automation engineer with solid experience in backend systems 
+      development and automation, passionate about integrating technologies that drive energy efficiency 
+      and continuous improvement in industrial processes. With comprehensive and practical training in 
+      programming, automation, and data analysis, I am motivated by the constant challenge of transforming 
+      technical knowledge into innovative and functional solutions that add real value to the projects I 
+      work on.
+    </p>
+    <p>
+      Throughout my career, I have worked in environments that combine industrial control with software 
+      development, excelling in the implementation of energy monitoring systems, process automation, and 
+      the creation of APIs for the integration of IoT sensors. I am committed to continuous learning and 
+      practical application, always seeking to be useful to society through my technical and professional 
+      work.
+    </p>
+    <a class="btn btn-primary btn-lg rounded-0 my-3" href="{% static 'portfolio/cv.pdf' %}">Download my CV</a>
+  </div>
+</header>
+
+<!-- Porfolio Section -->
+<div class="row my-4 text-center">
+  <h3 class="text-light w-100">My Projects</h3>
+  <p class="text-light w-100">Examples of my work.</p>
+
+  {% for project in projects %}
+    <div class="col-md-4 p-3 d-flex align-items-stretch">
+      <div class="card bg-dark text-light w-100" style="min-height: 370px;">
+        {% if project.image %}
+        <img src="{{ project.image.url }}" class="card-img-top" alt="{{ project.title }}" style="height: 180px; object-fit: cover;" />
+        {% else %}
+        <img src="{% static 'portfolio/profile.jpeg' %}" class="card-img-top" alt="Placeholder" style="height: 180px; object-fit: cover;" />
+        {% endif %}
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">{{ project.title }}</h5>
+          <!-- Contenedor scrollable para la descripción -->
+          <div class="card-text-scroll flex-grow-1 mb-3">
+            {{ project.description }}
+          </div>
+          {% if project.url %}
+          <a href="{{ project.url }}" class="btn btn-primary btn-sm mt-auto" target="_blank" rel="noreferrer">Visit the Project</a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+{% endblock %}

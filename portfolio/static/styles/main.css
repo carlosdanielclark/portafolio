@@ -1,0 +1,42 @@
+/* portfolio/static/styles/main.css */
+
+/* Garantizar texto visible con buen contraste */
+body.text-light {
+  color: #f8f9fa !important; /* Color claro para texto */
+  background-color: #000000;  /* Fondo negro #212529 */
+}
+
+/* Asegurar que las imágenes no estén opacas */
+.card-project img {
+  opacity: 1 !important;
+  transition: none !important;
+}
+
+/* Navbar ajuste de color */
+.navbar-dark .navbar-nav .nav-link {
+  color: #f8f9fa !important;
+  opacity: 1 !important;
+}
+
+/* Estilo para área scrollable de la descripción del proyecto */
+.card-text-scroll {
+  max-height: 90px;          /* Altura fija para que se active scroll si texto es más largo */
+  overflow-y: auto;          /* Scroll vertical automático */
+  scrollbar-width: thin;     /* Para Firefox: scrollbar delgada */
+  scrollbar-color: #6c757d #212529; /* Color de scrollbar y fondo */
+  padding-right: 5px;        /* Evitar que texto quede muy pegado */
+}
+
+/* Scrollbar para navegadores Webkit (Chrome, Edge, Safari) */
+.card-text-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.card-text-scroll::-webkit-scrollbar-track {
+  background: #212529;       /* Fondo track */
+}
+
+.card-text-scroll::-webkit-scrollbar-thumb {
+  background-color: #6c757d; /* Color "pulgar" */
+  border-radius: 3px;
+}

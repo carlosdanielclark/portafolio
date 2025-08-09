@@ -1,0 +1,34 @@
+<!-- Importar etiqueta-->
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Django Portafolio</title>
+
+  <!-- CSS de Bootstrap desde carpeta estática -->
+  <link href="{% static 'styles/css/bootstrap.min.css' %}" rel="stylesheet" />
+
+  <!-- Si tienes algún CSS personalizado, puedes vincularlo aquí -->
+  <link href="{% static 'styles/main.css' %}" rel="stylesheet" />
+</head>
+
+<body class="text-light">
+
+  {% include '_partials/_navbar.html' %}
+
+  <div class="container p-4">
+    {% block content %}
+    {% endblock %}
+  </div>
+
+  <!-- JS de Bootstrap y Popper desde carpeta estática -->
+  <script src="{% static 'styles/js/bootstrap.bundle.min.js' %}"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+# Exclude Python bytecode and cache
+**/__pycache__**
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environment
+venv_portafolio/
+env/
+ENV/
+.venv/
+venv/
+
+# Database files
+*.sqlite3
+
+# Django migrations (keep, but exclude generated files if needed)
+*/migrations/*.pyc
+*/migrations/__pycache__/
+
+# VS Code settings and workspace
+.vscode/
+
+# OS/system files
+.DS_Store
+Thumbs.db
+
+# Logs and backups
+*.log
+*.bak
+
+# Node modules and frontend build artifacts (if any are later added)
+node_modules/
+dist/
+build/
+media
+
+# Ignore secrets/configs (if used)
+*.env
+.env.*
+
+# Exclude compiled files from testing
+*.coverage
+
+# Ignore manage.py/__init__.py generated caches
+*.egg-info/
