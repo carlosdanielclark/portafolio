@@ -148,9 +148,3 @@ Si surge alguna duda o error, revisa:
 ¡🎉 Feliz desarrollo!
 
 ```
-
-
-***
-
-Si quieres, puedo ayudarte a crear también el archivo **requirements.txt** o un script para facilitar la instalación automatizada. Solo dime.
-
